@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div>
+    <div>
+        <div class='overlay'></div>
+        <div>
+            <div>Benvenuto!</div>
+            <div>Accedi per effettuare acquisti sul sito </div>
+            <div>
+                <ng-container *ngIf="error |async">
+                    {{error |async}}
+                </ng-container>
+                <input type='email' placeholder='Email' #email>
+                <input type='password' placeholder='Password' #pass>
+            </div>
+            <div><button (click)="login(email.value,pass.value)">Login</button></div>
+            <div>non sei ancora <span class='highlight' routerLink="/register">Registrato</span>?</div>
+            <div><button routerLink="/register">Crea un account</button></div>
+        </div>
+    </div>
+</div>
