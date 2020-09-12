@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     return this.store.pipe(select(selectErrorMessage));
   }
 
-  login(username:string, mail:string, pass:string){
-    let user:User = {"username":username,"email":mail,"password":pass};
+  login(mail:string, pass:string){
+    let user:User = {"email":mail,"password":pass};
     this.store.dispatch(login({user}));
   }
 

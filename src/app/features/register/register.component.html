@@ -1,1 +1,18 @@
-<p>register works!</p>
+<div></div>
+<div>
+    <div>
+        <div></div>
+        <div>
+            <div>Registrati!</div>
+            <div>Per non perdere nessuna offerta del nostro sito</div>
+            <div>
+                <input type='text' placeholder='Username' #user>
+                <input type='email' placeholder='Email' #mail>
+                <input type='password' placeholder='Password' #psw>
+            </div>
+            <div><button (click)="signup(user.value,mail.value,psw.value)">Registrati</button></div>
+            <div>hai già un <span routerLink="/login">Account</span>?</div>
+            <div><button routerLink="/login">Effettua il Login</button></div>
+        </div>
+    </div>
+</div>
