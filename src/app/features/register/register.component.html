@@ -1,18 +1,46 @@
-<div></div>
-<div>
-    <div>
-        <div></div>
-        <div>
-            <div>Registrati!</div>
-            <div>Per non perdere nessuna offerta del nostro sito</div>
-            <div>
-                <input type='text' placeholder='Username' #user>
-                <input type='email' placeholder='Email' #mail>
-                <input type='password' placeholder='Password' #psw>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="../../../assets/login/img-01.png" alt="IMG">
             </div>
-            <div><button (click)="signup(user.value,mail.value,psw.value)">Registrati</button></div>
-            <div>hai già un <span routerLink="/login">Account</span>?</div>
-            <div><button routerLink="/login">Effettua il Login</button></div>
+
+            <form class="login100-form validate-form">
+                <span class="login100-form-title">
+                    Registrati nel nostro sito
+                </span>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="user" placeholder="Username" #user>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="email" placeholder="Email" #mail>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="password" name="pass" placeholder="Password" #psw>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" (click)=signup(user.value,mail.value,psw.value)>
+                        Signup
+                    </button>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>

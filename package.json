@@ -24,8 +24,12 @@
     "@ngrx/effects": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngrx/store-devtools": "^10.0.0",
+    "animatewithsass": "^3.2.1",
+    "babel-plugin-transform-jsx-include-source": "^0.9.0",
     "bootstrap": "^4.4.0",
+    "bourbon": "^7.0.0",
     "rxjs": "~6.5.4",
+    "transformation": "^0.2.0-beta.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
