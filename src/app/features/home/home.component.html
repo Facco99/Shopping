@@ -1,1 +1,11 @@
 <app-menu></app-menu>
+<ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <div class="picsum-img-wrapper">
+            <img [src]="img">
+        </div>
+    </ng-template>
+</ngb-carousel>
+<div class="bott">
+    <button routerLink="/personalizza">Personalizza ora</button>
+</div>
