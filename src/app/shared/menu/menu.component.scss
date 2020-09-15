@@ -1,0 +1,93 @@
+.menu {
+    background: linear-gradient(90deg, rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
+    height: 260px;
+}
+
+.title {
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.strong {
+    font-weight: bolder;
+}
+
+.strongs {
+    font-weight: bolder;
+    text-align: left;
+}
+
+.cart {
+    text-align: center;
+    z-index: 1;
+    cursor: pointer;
+    width: 180px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    right: 1%;
+    font-size: 20px;
+    color: white;
+}
+
+.icart {
+    //padding-left: 10px;
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    fill: white
+}
+
+.items {
+    line-height: 50px;
+    padding: 10px;
+}
+
+//dropdown
+.products {
+    background-color: whitesmoke;
+    font-size: 14px;
+    z-index: 1;
+    display: none;
+    list-style: none;
+    position: relative;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    border-top: 1px solid black;
+}
+
+td {
+    padding: 1px 10px;
+}
+
+.left {
+    text-align: right;
+}
+
+.cart:hover .products {
+    display: block;
+    border-radius: 10px;
+}
+
+.cart:hover {
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.cart:hover .icart {
+    fill: violet;
+}
+
+.empty {
+    font-weight: bold;
+    font-size: 20px;
+}
