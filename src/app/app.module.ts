@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpcommunicationService } from './core/httpcommunicationservice/httpcommunication.service';
+import { CartEffects } from './redux/cart/cart.effects';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpcommunicationService } from './core/httpcommunicationservice/httpco
     AppRoutingModule,
     NgbModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([UserEffects]),
+    EffectsModule.forRoot([UserEffects, CartEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
