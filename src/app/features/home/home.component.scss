@@ -30,7 +30,8 @@ button {
     cursor: pointer;
     height: 60px;
     width: 230px;
-    background-color: rgb(194, 168, 211);
+    background: rgb(122, 210, 248);
+    background: linear-gradient(90deg, rgba(122, 210, 248, 1) 24%, rgba(194, 129, 254, 1) 84%);
     border: 1px solid white;
     color: white;
     font-size: 20px;
