@@ -1,8 +1,8 @@
-<app-menu></app-menu>
+<app-menu [title]="'Welcome to SposiStore'" [cart]=true></app-menu>
 <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
-    <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <ng-template ngbSlide *ngFor="let img of images; index as i" [id]=i>
         <div class="picsum-img-wrapper">
-            <img [src]="img">
+            <img [src]="img" routerLink="/personalizza/{{ i+1 }}">
         </div>
     </ng-template>
 </ngb-carousel>

@@ -16,6 +16,8 @@ export class HomeComponent {
   pauseOnHover = true;
   pauseOnFocus = true;
 
+  immagine:string='0';
+
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
   togglePaused() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Product } from 'src/app/core/models/product';
@@ -12,15 +12,19 @@ import { removeToCart } from 'src/app/redux/cart/cart.actions';
 })
 export class MenuComponent implements OnInit {
 
-  currentRoute:string=null;
+  @Input()
+  title:string;
+
+  @Input()
+  home:boolean;
+
+  @Input()
+  cart:boolean;
   products: Product[];
   
   constructor(private router:Router, private store:Store) { }
 
   ngOnInit(): void {
-    this.router.events.subscribe(value => {
-      this.currentRoute=this.router.url.toString();
-      });
 
       this.store.pipe(select(selectProducts)).subscribe(products=>{
         this.products=products;
