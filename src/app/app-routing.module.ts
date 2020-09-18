@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./features/register/register.module').then(m => m.RegisterModule), canLoad: [LoggedGuard] },
   { path: 'personalizza', loadChildren: () => import('./features/personalizza/personalizza.module').then(m => m.PersonalizzaModule), canLoad: [LoginGuard] },
   { path: 'carrello', loadChildren: () => import('./features/carrello/carrello.module').then(m => m.CarrelloModule) },
+  { path: 'dati', loadChildren: () => import('./features/dati/dati.module').then(m => m.DatiModule) },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

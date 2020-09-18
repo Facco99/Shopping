@@ -1,0 +1,80 @@
+.all {
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    text-align: center;
+    width: 55%;
+    //min-width: 450px;
+    margin-top: -160px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.479);
+}
+
+::placeholder {
+    color: black;
+}
+
+input {
+    border: 0;
+    margin: 15px auto 0px auto;
+    background-color: rgba(239, 213, 255, 1);
+    border-bottom: 1px solid white;
+    color: black;
+    width: 95%;
+    height: 40px;
+    font-weight: bold;
+    text-indent: 10px;
+}
+
+.half {
+    width: 46%;
+}
+
+.left {
+    margin-right: 25px;
+}
+
+.address {
+    width: 75%;
+}
+
+.num {
+    width: 17%;
+}
+
+.btnLeft {
+    margin-right: 7%;
+    color: rgb(198, 155, 224);
+}
+
+.btnRight {
+    background-color: rgb(198, 155, 224);
+    color: white;
+}
+
+//bottone
+button {
+    //min-width: 260px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    width: 27%;
+    background-color: #ffffff;
+}
+
+button span {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
