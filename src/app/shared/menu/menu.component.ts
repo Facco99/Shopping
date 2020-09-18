@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
 
   @Input()
   cart:boolean;
+  
   products: Product[];
   
   constructor(private router:Router, private store:Store) { }

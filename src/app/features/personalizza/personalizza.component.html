@@ -1,3 +1,22 @@
-<app-menu></app-menu>
-<input type="text" #inputValue>
-<button (click)="addToCart(inputValue.value);">aggiungi</button>
+<app-menu [title]="'Personalizza'" [home]=true [cart]=true></app-menu>
+<div class="product">
+    <img src="../../../assets/img/vestiti2.jpg" class="img">
+    <h2>Personalizza il tuo prodotto</h2>
+    <h5>Colore prodotto</h5>
+    <span class="dot1"></span>
+    <span class="dot2"></span>
+    <span class="dot3"></span>
+    <span class="dot4"></span>
+    <span class="dot5"></span>
+    <span class="dot6"></span>
+    <h5>Testo personalizzato</h5>
+    <form>
+        <input type="text" id="testo" name="testo" placeholder="Inserisci testo">
+    </form>
+    <div class="bottone">
+        <a class="myButton">AGGIUNGI AL CARRELLO</a>
+    </div>
+    <div class="bottone2">
+        <a class="myButton2">RIPRISTINA</a>
+    </div>
+</div>
