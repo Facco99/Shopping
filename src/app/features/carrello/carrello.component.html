@@ -1,0 +1,39 @@
+<app-menu [title]="'Carrello'" [home]=true></app-menu>
+<div class="wrap cf">
+    <div class="heading cf">
+        <h1>Il Mio Carrello</h1>
+        <a routerLink="/home" class="continue">Torna a fare Shopping</a>
+    </div>
+    <ng-container>
+        <div class="cart">
+            <ul class="cartWrap">
+                <li class="items odd">
+                    <div class="infoWrap">
+                        <div class="cartSection capitalize">
+                            <img src="../../../assets/img/vestiti2.jpg" class="itemImg">
+                            <h3>Tipo: </h3>
+                            <h6>Colore: </h6>
+                            <p>Testo: </p><br>
+                        </div>
+                        <div class="prodTotal cartSection">
+                            <p>€</p>
+                        </div>
+                        <div class="cartSection removeWrap">
+                            <a class="remove">x</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="subtotal cf">
+            <ul>
+                <li class="totalRow final"><span class="label">Totale</span><span class="value">€</span></li>
+                <li class="totalRow"><a routerLink="/dati" class="btn continue">Prosegui</a></li>
+            </ul>
+        </div>
+    </ng-container>
+    <ng-template #empty>
+        <h1 class="empty">Il tuo Carrello è vuoto</h1>
+        <h4 class="empty"><a routerLink="/personalizza"> Comincia a fare shopping</a></h4>
+    </ng-template>
+</div>

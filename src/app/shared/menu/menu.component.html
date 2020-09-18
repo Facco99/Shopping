@@ -4,7 +4,7 @@
         <span class="items">Home</span>
     </div>
     <p class="title">{{title}}</p>
-    <div class="cart" *ngIf="cart==true" routerLink="/carrello">
+    <div class="cart" *ngIf="cart==true">
         <span alt=""><svg id="cart" class="icart "  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 426.667 426.667" xml:space="preserve">
             <g>
               <g>
@@ -31,7 +31,7 @@
         <g></g>
         <g></g>
           </svg></span>
-        <span class="items">Carrello
+        <span class="items" routerLink="/carrello">Carrello
             <ng-container *ngIf="products.length>0">
                 ({{products.length}})
             </ng-container>
