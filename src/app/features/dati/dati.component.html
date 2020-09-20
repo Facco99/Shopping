@@ -10,6 +10,6 @@
         <input type="number" placeholder="N°" class="num" formControlName="numero">
         <input type="text" placeholder="Informazioni per corriere" formControlName="info">
         <button class="btnLeft" routerLink="/carrello">Indietro</button>
-        <button type="submit" class="btnRight" routerLink="/checkout" [disabled]="datiForm.status === 'INVALID'">Prosegui</button>
+        <button type="submit" class="btnRight" routerLink="/checkout" [disabled]="datiForm.status === 'INVALID'" (click)="saveDati()">Prosegui</button>
     </form>
 </div>

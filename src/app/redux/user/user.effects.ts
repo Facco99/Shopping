@@ -66,13 +66,11 @@ export class UserEffects{
         
     signUpUserSuccess$=createEffect(()=>this.actions$.pipe(
         ofType(signUpUserSuccess),
-        //tap((action)=>console.log('utente,registrato adesso devo registrarlo nella sessione e reindirizzarlo',action)),
         map( (action) => initUser({ user:action.user })),
         tap((action)=>{
-        //console.log('salvo in sessione l\'utente appena registrato');
         sessionStorage.setItem("utente", JSON.stringify({username: action.user.username, email: action.user.email }))
         this.router.navigateByUrl('/home');
     })
     ))
-
+    
 }

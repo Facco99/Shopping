@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Dati } from 'src/app/core/models/dati';
+import { saveDati } from 'src/app/redux/dati/dati.actions';
 
 @Component({
   selector: 'app-dati',
@@ -9,8 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DatiComponent implements OnInit {
 
   datiForm: FormGroup;
+  dati:Dati;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private store:Store) { }
 
   ngOnInit(): void {
 
@@ -24,6 +28,11 @@ export class DatiComponent implements OnInit {
       numero: ['', Validators.required],
       info: [''],
     })
+  }
+
+  saveDati(){
+    this.dati = this.datiForm.value;
+    this.store.dispatch(saveDati({ dati:this.dati }))
   }
 
 }
