@@ -1,3 +1,4 @@
+<app-menu [title]="'Carrello'" [home]=true></app-menu>
 <div class="wrap cf">
     <div class="heading cf">
         <h1>Il Mio Carrello ({{products.length}})</h1>
@@ -13,7 +14,7 @@
                                 <img src="../../../assets/img/maglia.jpg" class="itemImg">
                                 <h6>Colore: {{item.colore}}</h6>
                                 <h6>Taglia: {{item.taglia}}</h6><br>
-                                <h6>Scritta personalizzata: {{item.scritta}}</h6>
+                                <h6>Scritta personalizzata: {{item.testo}}</h6>
                             </div>
                             <div class="prodTotal cartSection">
                                 <p>{{item.prezzo}}€</p>
@@ -31,7 +32,7 @@
         </div>
         <div class="subtotal cf">
             <ul>
-                <li class="totalRow final"><span class="label">Totale</span><span class="value">€</span></li>
+                <li class="totalRow final"><span class="label">Totale</span><span class="value">{{tot.toFixed(2)}}€</span></li>
                 <li class="totalRow"><a routerLink="/dati" class="btn continue">Checkout</a></li>
             </ul>
         </div>

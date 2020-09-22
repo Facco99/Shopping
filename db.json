@@ -15,43 +15,55 @@
   ],
   "products": [
     {
-      "id": 1
-    },
-    {
+      "colore": "black",
+      "taglia": "M",
+      "testo": "Ciao moglie",
+      "prezzo": 30,
       "id": 2
+    }
+  ],
+  "tipo": [
+    {
+      "id": 0,
+      "tipo": "Maglia",
+      "prezzo": 20,
+      "colore": "White",
+      "taglia": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "assets/img/maglia.jpg",
+      "scritta": ""
     },
     {
-      "id": 3
+      "id": 1,
+      "tipo": "Felpa",
+      "prezzo": 50,
+      "colore": "Red",
+      "taglia": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "assets/img/felpa.jpg",
+      "scritta": ""
     },
     {
-      "colore": "black",
-      "taglia": "L",
-      "testo": "Ciao moglie",
-      "id": 4
-    },
-    {
-      "colore": "black",
-      "taglia": "M",
-      "testo": "Ciao moglie",
-      "id": 6
-    },
-    {
-      "colore": "white",
-      "taglia": "L",
-      "testo": "Ciao moglie",
-      "id": 7
-    },
-    {
-      "colore": "white",
-      "taglia": "L",
-      "testo": "Ciao moglie",
-      "id": 8
-    },
-    {
-      "colore": "black",
-      "taglia": "M",
-      "testo": "Ciao moglie",
-      "id": 9
+      "id": 2,
+      "tipo": "Canotta",
+      "prezzo": 20,
+      "colore": "Red",
+      "taglia": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "assets/img/canotta.jpg",
+      "scritta": ""
     }
   ]
 }

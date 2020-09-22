@@ -12,6 +12,7 @@ import { addToCart } from 'src/app/redux/cart/cart.actions';
 })
 export class PersonalizzaComponent implements OnInit {
   products: Product[];
+  prodotti: string[];
   personalizzaForm: FormGroup;
 
   constructor(private store:Store, private fb: FormBuilder) { 
@@ -32,11 +33,17 @@ export class PersonalizzaComponent implements OnInit {
 
   addToCart(){
     let product:Product = this.personalizzaForm.value
+    product.prezzo=this.prezzo(product);
     this.store.dispatch(addToCart({ product }))
   }
 
   reset(){
     this.personalizzaForm.reset();
+  }
+
+  prezzo(prod:Product):number {
+    let price:number=30;
+    return price;
   }
 
 }

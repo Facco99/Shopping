@@ -14,22 +14,33 @@ export class CarrelloComponent implements OnInit {
   mostra:boolean;
   tot:number;
   products: Product[];
+  spedizione: number;
   constructor(private store:Store) { 
   }
 
   ngOnInit(): void {
     this.store.pipe(select(selectProducts)).subscribe(products=>{
       this.products=products;
+      this.prezzo();
     });
 
   }
 
-  returnImage(tipo:string):string{
-    return "../../../assets/img/"+tipo+".jpeg";
-  }
-
   remove(id:number){
     this.store.dispatch(removeToCart({id}));
+  }
+
+  prezzo(){
+    this.tot=0;
+    this.products.forEach(item => {
+      this.tot+=item.prezzo;
+    });
+    if(this.tot<100){
+      this.spedizione=5;
+      this.tot+=this.spedizione;
+    }else{
+      this.spedizione=0;
+    }
   }
 
 }

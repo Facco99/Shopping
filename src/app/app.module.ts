@@ -13,6 +13,8 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpcommunicationService } from './core/httpcommunicationservice/httpcommunication.service';
 import { CartEffects } from './redux/cart/cart.effects';
+import { DatiEffects } from './redux/dati/dati.effects';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,13 @@ import { CartEffects } from './redux/cart/cart.effects';
     AppRoutingModule,
     NgbModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([UserEffects, CartEffects]),
+    EffectsModule.forRoot([UserEffects, CartEffects, DatiEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [HttpcommunicationService],
   bootstrap: [AppComponent]
