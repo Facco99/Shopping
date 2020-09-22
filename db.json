@@ -13,5 +13,45 @@
       "id": 2
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "colore": "black",
+      "taglia": "L",
+      "testo": "Ciao moglie",
+      "id": 4
+    },
+    {
+      "colore": "black",
+      "taglia": "M",
+      "testo": "Ciao moglie",
+      "id": 6
+    },
+    {
+      "colore": "white",
+      "taglia": "L",
+      "testo": "Ciao moglie",
+      "id": 7
+    },
+    {
+      "colore": "white",
+      "taglia": "L",
+      "testo": "Ciao moglie",
+      "id": 8
+    },
+    {
+      "colore": "black",
+      "taglia": "M",
+      "testo": "Ciao moglie",
+      "id": 9
+    }
+  ]
 }

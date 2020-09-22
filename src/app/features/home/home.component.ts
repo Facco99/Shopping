@@ -8,7 +8,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 })
 export class HomeComponent {
 
-  images=["../../../assets/img/vestiti1.jpg","../../../assets/img/vestiti2.jpg","../../../assets/img/vestiti3.jpg","../../../assets/img/vestiti4.jpg"];
+  images=["../../../assets/img/maglia.jpg","../../../assets/img/felpa.jpg","../../../assets/img/canotta.jpg"];
 
   paused = false;
   unpauseOnArrow = false;

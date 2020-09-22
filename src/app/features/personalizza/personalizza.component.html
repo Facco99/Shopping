@@ -1,22 +1,19 @@
 <app-menu [title]="'Personalizza'" [home]=true [cart]=true></app-menu>
 <div class="product">
-    <img src="../../../assets/img/vestiti2.jpg" class="img">
-    <h2>Personalizza il tuo prodotto</h2>
-    <h5>Colore prodotto</h5>
-    <span class="dot1"></span>
-    <span class="dot2"></span>
-    <span class="dot3"></span>
-    <span class="dot4"></span>
-    <span class="dot5"></span>
-    <span class="dot6"></span>
-    <h5>Testo personalizzato</h5>
-    <form>
-        <input type="text" id="testo" name="testo" placeholder="Inserisci testo">
+    <img src="../../../assets/img/maglia.jpg" class="img">
+    <form [formGroup]="personalizzaForm">
+        <h2>Personalizza il tuo prodotto</h2>
+        <h5>Colore prodotto</h5>
+        <app-colore formControlName="colore"></app-colore>
+        <h5>Taglia</h5>
+        <app-taglia formControlName="taglia"></app-taglia>
+        <h5>Testo personalizzato</h5>
+        <input type="text" id="testo" name="testo" placeholder="Inserisci testo" formControlName="testo">
+        <div class="bottone">
+            <a class="myButton" (click)="addToCart()">AGGIUNGI AL CARRELLO</a>
+        </div>
+        <div class="bottone2">
+            <a class="myButton2" (click)="reset()">RIPRISTINA</a>
+        </div>
     </form>
-    <div class="bottone">
-        <a class="myButton">AGGIUNGI AL CARRELLO</a>
-    </div>
-    <div class="bottone2">
-        <a class="myButton2">RIPRISTINA</a>
-    </div>
 </div>

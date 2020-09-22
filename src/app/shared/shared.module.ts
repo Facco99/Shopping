@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { ColoreComponent } from './personalizza/colore/colore.component';
+import { TagliaComponent } from './personalizza/taglia/taglia.component';
 
 
 
 @NgModule({
-  declarations: [MenuComponent],
+  declarations: [MenuComponent, ColoreComponent, TagliaComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,7 +20,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     MenuComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TagliaComponent,
+    ColoreComponent
   ]
 })
 export class SharedModule { }

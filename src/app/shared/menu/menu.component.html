@@ -40,16 +40,16 @@
             <ng-container *ngFor="let item of products">
                 <table class="products">
                     <tr>
-                        <td class="left">Tipo</td>
-                        <td class="strongs">{{item?.tipo}}</td>
-                    </tr>
-                    <tr>
                         <td class="left">Colore</td>
                         <td class="strongs">{{item?.colore}}</td>
                     </tr>
                     <tr>
-                        <td class="left">Prezzo</td>
-                        <td class="strongs">{{item?.prezzo}}</td>
+                        <td class="left">Taglia</td>
+                        <td class="strongs">{{item?.taglia}}</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Scritta</td>
+                        <td class="strongs">{{item?.scritta}}</td>
                     </tr>
                     <p (click)="rimuovi(item.id)">Rimuovi</p>
                 </table>

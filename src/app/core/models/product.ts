@@ -3,4 +3,6 @@ export interface Product {
     tipo:string;
     prezzo:number;
     colore:string;
+    taglia:string;
+    scritta:string;
 }

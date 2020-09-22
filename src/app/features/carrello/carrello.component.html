@@ -1,35 +1,43 @@
-<app-menu [title]="'Carrello'" [home]=true></app-menu>
 <div class="wrap cf">
-    <ng-container>
+    <div class="heading cf">
+        <h1>Il Mio Carrello ({{products.length}})</h1>
+        <a routerLink="/home" class="continue" *ngIf="products?.length>0">Torna a fare Shopping</a>
+    </div>
+    <ng-container *ngIf="products.length>0;else empty">
         <div class="cart">
             <ul class="cartWrap">
-                <li class="items odd">
-                    <div class="infoWrap">
-                        <div class="cartSection capitalize">
-                            <img src="../../../assets/img/vestiti2.jpg" class="itemImg">
-                            <h3>Tipo: </h3>
-                            <h6>Colore: </h6>
-                            <p>Testo: </p><br>
+                <ng-container *ngFor="let item of products; let i=index;">
+                    <li class="items odd" *ngIf="mostra==true || i<2">
+                        <div class="infoWrap">
+                            <div class="cartSection capitalize">
+                                <img src="../../../assets/img/maglia.jpg" class="itemImg">
+                                <h6>Colore: {{item.colore}}</h6>
+                                <h6>Taglia: {{item.taglia}}</h6><br>
+                                <h6>Scritta personalizzata: {{item.scritta}}</h6>
+                            </div>
+                            <div class="prodTotal cartSection">
+                                <p>{{item.prezzo}}€</p>
+                            </div>
+                            <div class="cartSection removeWrap" (click)="remove(item.id)">
+                                <a class="remove">Rimuovi</a>
+                            </div>
                         </div>
-                        <div class="prodTotal cartSection">
-                            <p>€</p>
-                        </div>
-                        <div class="cartSection removeWrap">
-                            <a class="remove">Rimuovi</a>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </ng-container>
+                <div class="show">
+                    <button *ngIf="products.length>3 && mostra==false" (click)="mostra=true">Mostra tutti</button>
+                </div>
             </ul>
         </div>
         <div class="subtotal cf">
             <ul>
                 <li class="totalRow final"><span class="label">Totale</span><span class="value">€</span></li>
-                <li class="totalRow"><a routerLink="/dati" class="btn continue">Prosegui</a></li>
+                <li class="totalRow"><a routerLink="/dati" class="btn continue">Checkout</a></li>
             </ul>
         </div>
     </ng-container>
     <ng-template #empty>
         <h1 class="empty">Il tuo Carrello è vuoto</h1>
-        <h4 class="empty"><a routerLink="/personalizza"> Comincia a fare shopping</a></h4>
+        <h4 class="empty"><a routerLink="/home"> Comincia a fare shopping</a></h4>
     </ng-template>
 </div>

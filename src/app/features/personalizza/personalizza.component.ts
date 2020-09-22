@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { Product } from 'src/app/core/models/product';
 import { selectProducts } from 'src/app/redux/cart';
@@ -11,19 +12,31 @@ import { addToCart } from 'src/app/redux/cart/cart.actions';
 })
 export class PersonalizzaComponent implements OnInit {
   products: Product[];
-  constructor(private store:Store) { }
+  personalizzaForm: FormGroup;
+
+  constructor(private store:Store, private fb: FormBuilder) { 
+    this.personalizzaForm = fb.group({
+      colore: [''],
+      taglia: [''],
+      testo: [''],
+    });
+  }
 
   ngOnInit(): void {
     this.store.pipe(select(selectProducts)).subscribe(products=>{
       this.products=products;
-      //this.prod.id=this.products.length;
     });
-  }
-  prod:Product = {"tipo":"felpa","colore":"nero","prezzo":20};
 
-  addToCart(text){
-    //this.prod.id++;
-    this.store.dispatch(addToCart({product: this.prod}))
+
+  }
+
+  addToCart(){
+    let product:Product = this.personalizzaForm.value
+    this.store.dispatch(addToCart({ product }))
+  }
+
+  reset(){
+    this.personalizzaForm.reset();
   }
 
 }

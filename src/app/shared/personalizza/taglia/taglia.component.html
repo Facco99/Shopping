@@ -1,0 +1,2 @@
+<span class="dot" *ngFor="let taglia of taglie" (click)="selectTaglia(taglia)" [ngClass]="{'selected': taglia === value, 'no-selected': taglia != value}">{{ taglia }}
+</span>
