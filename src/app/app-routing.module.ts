@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'personalizza', loadChildren: () => import('./features/personalizza/personalizza.module').then(m => m.PersonalizzaModule), canLoad: [LoginGuard] },
   { path: 'carrello', loadChildren: () => import('./features/carrello/carrello.module').then(m => m.CarrelloModule), canLoad: [LoginGuard] },
   { path: 'dati', loadChildren: () => import('./features/dati/dati.module').then(m => m.DatiModule), canLoad: [LoginGuard] },
+  { path: 'checkout', loadChildren: () => import('./features/checkout/checkout.module').then(m => m.CheckoutModule), canLoad: [LoginGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

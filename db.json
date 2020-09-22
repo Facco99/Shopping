@@ -20,6 +20,13 @@
       "testo": "Ciao moglie",
       "prezzo": 30,
       "id": 2
+    },
+    {
+      "colore": "red",
+      "taglia": "L",
+      "testo": "Ciao moglie",
+      "prezzo": 30,
+      "id": 3
     }
   ],
   "tipo": [

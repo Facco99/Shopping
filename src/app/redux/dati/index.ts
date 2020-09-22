@@ -3,7 +3,7 @@ import { DatiState } from './dati.reducers';
 
 export const selectDatiState = (state)=>state.datiState;
 
-export const selectProducts = createSelector(
+export const selectDati = createSelector(
     selectDatiState,
     (datiState: DatiState) => datiState.dati
 )
