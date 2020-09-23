@@ -719,10 +719,9 @@ export class CheckoutComponent implements OnInit {
                 &lt;option value&#x3D;&quot;carta di debito&quot;&gt;Carta di debito&lt;/option&gt;
             &lt;/select&gt;
                 &lt;select class&#x3D;&quot;select&quot; required formControlName&#x3D;&quot;type&quot; id&#x3D;&quot;type&quot;&gt;
-                &lt;option value&#x3D;&quot;&quot; disabled selected hidden invalid&gt;Tipo di Carta&lt;/option&gt;
+                &lt;option value&#x3D;&quot;&quot; disabled selected hidden invalid&gt;Circuito Carta&lt;/option&gt;
                 &lt;option value&#x3D;&quot;visa&quot;&gt;Visa&lt;/option&gt;
                 &lt;option value&#x3D;&quot;mastercard&quot;&gt;MasterCard&lt;/option&gt;
-                &lt;option value&#x3D;&quot;maestro&quot;&gt;Maestro&lt;/option&gt;
             &lt;/select&gt;
                 &lt;input type&#x3D;&quot;tel&quot; class&#x3D;&quot;cc left&quot; formControlName&#x3D;&quot;number&quot; inputmode&#x3D;&quot;numeric&quot; placeholder&#x3D;&quot;Numero Carta&quot; pattern&#x3D;&quot;[0-9\s]{13,19}&quot; maxlength&#x3D;&quot;19&quot; id&#x3D;&quot;num&quot;&gt;
                 &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;cvv&quot; placeholder&#x3D;&quot;CVV&quot; maxlength&#x3D;3 formControlName&#x3D;&quot;cvv&quot; id&#x3D;&quot;cvv&quot;&gt;
@@ -741,6 +740,7 @@ export class CheckoutComponent implements OnInit {
     &lt;/ng-container&gt;
     &lt;ng-template #finish&gt;
         &lt;h1&gt;Acquisto completato&lt;/h1&gt;
+        &lt;h3&gt;&lt;a routerLink&#x3D;&quot;/home&quot;&gt;Torna a fare Shopping&lt;/a&gt;&lt;/h3&gt;
     &lt;/ng-template&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -771,12 +771,10 @@ export class CheckoutComponent implements OnInit {
     appearance: none;
     background-position: 98% 8px;
     background-color: rgba(239, 213, 255, 1);
-    color: white;
 }
 
 .select option {
     background-color: rgba(239, 213, 255, 1);
-    color: white;
 }
 
 select:valid,
@@ -813,10 +811,6 @@ input {
 input:focus,
 .select:focus {
     background-color: rgba(255, 255, 255, 0.479);
-}
-
-::placeholder {
-    color: white;
 }
 
 .btnLeft {
@@ -1010,7 +1004,7 @@ button:hover span {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu [title]="\'Checkout\'" home=true></app-menu><div class="wrapper">    <ng-container *ngIf="done==false; else finish">        <ng-container *ngIf="dati; else other">            <div class="parent">                <div class="div1">Prodotti acquistati </div>                <div class="div2">Prezzo </div>                <div class="div3">Spedizione </div>                <div class="div4">Indirizzo </div>                <div class="div5">Spedito al sig. </div>                <div class="div6">{{products?.length}} </div>                <div class="div7">{{prezzo}}€</div>                <div class="div8">{{spedizione}}€</div>                <div class="div9">{{dati?.citta}}, {{dati?.indirizzo}}, {{dati?.numero}}</div>                <div class="div10">{{dati?.nome}} {{dati?.cognome}}</div>            </div>            <form autocomplete="off" [formGroup]="checkoutForm">                <select class="select" required formControlName="method" id="method">                <option value="" disabled selected hidden>Metodo di Pagamento</option>                <option value="carta di credito">Carta di credito</option>                <option value="carta di debito">Carta di debito</option>            </select>                <select class="select" required formControlName="type" id="type">                <option value="" disabled selected hidden invalid>Tipo di Carta</option>                <option value="visa">Visa</option>                <option value="mastercard">MasterCard</option>                <option value="maestro">Maestro</option>            </select>                <input type="tel" class="cc left" formControlName="number" inputmode="numeric" placeholder="Numero Carta" pattern="[0-9\s]{13,19}" maxlength="19" id="num">                <input type="text" class="cvv" placeholder="CVV" maxlength=3 formControlName="cvv" id="cvv">                <button class="btnLeft" routerLink="/shipping">Indietro</button>                <button type="submit" (click)="pay()" class="btnRight" [disabled]="checkoutForm.status === \'INVALID\'" [ngClass]="{\'disabled\': checkoutForm.status===\'INVALID\'}" id="submit">Prosegui</button>            </form>        </ng-container>        <ng-template #other>            <div class="error">                <h1>Non hai inserito i dati di spedizione</h1>                <h3><a routerLink="/dati">Inserisci ora i tuoi dati</a></h3>                <h5>Oppure</h5>                <h3><a routerLink="/personalizza">Torna a fare Shopping</a></h3>            </div>        </ng-template>    </ng-container>    <ng-template #finish>        <h1>Acquisto completato</h1>    </ng-template></div></div>'
+        var COMPONENT_TEMPLATE = '<div><app-menu [title]="\'Checkout\'" home=true></app-menu><div class="wrapper">    <ng-container *ngIf="done==false; else finish">        <ng-container *ngIf="dati; else other">            <div class="parent">                <div class="div1">Prodotti acquistati </div>                <div class="div2">Prezzo </div>                <div class="div3">Spedizione </div>                <div class="div4">Indirizzo </div>                <div class="div5">Spedito al sig. </div>                <div class="div6">{{products?.length}} </div>                <div class="div7">{{prezzo}}€</div>                <div class="div8">{{spedizione}}€</div>                <div class="div9">{{dati?.citta}}, {{dati?.indirizzo}}, {{dati?.numero}}</div>                <div class="div10">{{dati?.nome}} {{dati?.cognome}}</div>            </div>            <form autocomplete="off" [formGroup]="checkoutForm">                <select class="select" required formControlName="method" id="method">                <option value="" disabled selected hidden>Metodo di Pagamento</option>                <option value="carta di credito">Carta di credito</option>                <option value="carta di debito">Carta di debito</option>            </select>                <select class="select" required formControlName="type" id="type">                <option value="" disabled selected hidden invalid>Circuito Carta</option>                <option value="visa">Visa</option>                <option value="mastercard">MasterCard</option>            </select>                <input type="tel" class="cc left" formControlName="number" inputmode="numeric" placeholder="Numero Carta" pattern="[0-9\s]{13,19}" maxlength="19" id="num">                <input type="text" class="cvv" placeholder="CVV" maxlength=3 formControlName="cvv" id="cvv">                <button class="btnLeft" routerLink="/shipping">Indietro</button>                <button type="submit" (click)="pay()" class="btnRight" [disabled]="checkoutForm.status === \'INVALID\'" [ngClass]="{\'disabled\': checkoutForm.status===\'INVALID\'}" id="submit">Prosegui</button>            </form>        </ng-container>        <ng-template #other>            <div class="error">                <h1>Non hai inserito i dati di spedizione</h1>                <h3><a routerLink="/dati">Inserisci ora i tuoi dati</a></h3>                <h5>Oppure</h5>                <h3><a routerLink="/personalizza">Torna a fare Shopping</a></h3>            </div>        </ng-template>    </ng-container>    <ng-template #finish>        <h1>Acquisto completato</h1>        <h3><a routerLink="/home">Torna a fare Shopping</a></h3>    </ng-template></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarrelloComponent', 'selector': 'app-carrello'},{'name': 'CheckoutComponent', 'selector': 'app-checkout'},{'name': 'ColoreComponent', 'selector': 'app-colore'},{'name': 'DatiComponent', 'selector': 'app-dati'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PersonalizzaComponent', 'selector': 'app-personalizza'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TagliaComponent', 'selector': 'app-taglia'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CheckoutComponent'};
