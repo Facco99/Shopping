@@ -13,22 +13,7 @@
       "id": 2
     }
   ],
-  "products": [
-    {
-      "colore": "red",
-      "taglia": "L",
-      "testo": "Ciao moglie",
-      "prezzo": 30,
-      "id": 1
-    },
-    {
-      "colore": "black",
-      "taglia": "S",
-      "testo": "Oggi mi sposo",
-      "prezzo": 30,
-      "id": 2
-    }
-  ],
+  "products": [],
   "tipo": [
     {
       "id": 0,
