@@ -20,12 +20,10 @@
     appearance: none;
     background-position: 98% 8px;
     background-color: rgba(239, 213, 255, 1);
-    color: white;
 }
 
 .select option {
     background-color: rgba(239, 213, 255, 1);
-    color: white;
 }
 
 select:valid,
@@ -62,10 +60,6 @@ input {
 input:focus,
 .select:focus {
     background-color: rgba(255, 255, 255, 0.479);
-}
-
-::placeholder {
-    color: white;
 }
 
 .btnLeft {
